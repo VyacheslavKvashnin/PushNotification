@@ -13,6 +13,9 @@
 		BD9C518728993A41009DC37D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD9C518528993A41009DC37D /* Main.storyboard */; };
 		BD9C518928993A43009DC37D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD9C518828993A43009DC37D /* Assets.xcassets */; };
 		BD9C518C28993A43009DC37D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD9C518A28993A43009DC37D /* LaunchScreen.storyboard */; };
+		BD9C519528993AD0009DC37D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BD9C519428993AD0009DC37D /* FirebaseAnalytics */; };
+		BD9C519728993AD0009DC37D /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = BD9C519628993AD0009DC37D /* FirebaseMessaging */; };
+		BD9C51A028998713009DC37D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD9C519F28998713009DC37D /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,8 @@
 		BD9C518828993A43009DC37D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD9C518B28993A43009DC37D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD9C518D28993A43009DC37D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD9C519A28993DAE009DC37D /* PushNotification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PushNotification.entitlements; sourceTree = "<group>"; };
+		BD9C519F28998713009DC37D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +36,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD9C519728993AD0009DC37D /* FirebaseMessaging in Frameworks */,
+				BD9C519528993AD0009DC37D /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +63,9 @@
 		BD9C517E28993A41009DC37D /* PushNotification */ = {
 			isa = PBXGroup;
 			children = (
+				BD9C519A28993DAE009DC37D /* PushNotification.entitlements */,
 				BD9C517F28993A41009DC37D /* AppDelegate.swift */,
+				BD9C519F28998713009DC37D /* GoogleService-Info.plist */,
 				BD9C518128993A41009DC37D /* SceneDelegate.swift */,
 				BD9C518328993A41009DC37D /* ViewController.swift */,
 				BD9C518528993A41009DC37D /* Main.storyboard */,
@@ -83,6 +92,10 @@
 			dependencies = (
 			);
 			name = PushNotification;
+			packageProductDependencies = (
+				BD9C519428993AD0009DC37D /* FirebaseAnalytics */,
+				BD9C519628993AD0009DC37D /* FirebaseMessaging */,
+			);
 			productName = PushNotification;
 			productReference = BD9C517C28993A41009DC37D /* PushNotification.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +124,9 @@
 				Base,
 			);
 			mainGroup = BD9C517328993A41009DC37D;
+			packageReferences = (
+				BD9C519328993AD0009DC37D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = BD9C517D28993A41009DC37D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD9C518C28993A43009DC37D /* LaunchScreen.storyboard in Resources */,
+				BD9C51A028998713009DC37D /* GoogleService-Info.plist in Resources */,
 				BD9C518928993A43009DC37D /* Assets.xcassets in Resources */,
 				BD9C518728993A41009DC37D /* Main.storyboard in Resources */,
 			);
@@ -287,6 +304,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PushNotification/PushNotification.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P745L5C6BY;
@@ -306,7 +324,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -315,6 +333,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PushNotification/PushNotification.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P745L5C6BY;
@@ -334,7 +353,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -360,6 +379,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BD9C519328993AD0009DC37D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BD9C519428993AD0009DC37D /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD9C519328993AD0009DC37D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		BD9C519628993AD0009DC37D /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD9C519328993AD0009DC37D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BD9C517428993A41009DC37D /* Project object */;
 }
